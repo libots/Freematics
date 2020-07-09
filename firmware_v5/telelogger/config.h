@@ -48,9 +48,9 @@
 #define WIFI_SSID "SSID"
 #define WIFI_PASSWORD "PASSWORD"
 // cellular network settings
-#define CELL_APN ""
+#define CELL_APN "truphone.com" // truphone.com, hologram, etc.
 // Freematics Hub server settings
-#define SERVER_HOST "hub.freematics.com"
+#define SERVER_HOST "hub.freematics.com" // ***** (default hub.freematics.com)
 #define SERVER_PROTOCOL PROTOCOL_UDP
 #endif 
 
@@ -63,7 +63,7 @@
 
 #if !SERVER_PORT
 #if SERVER_PROTOCOL == PROTOCOL_UDP
-#define SERVER_PORT 8081
+#define SERVER_PORT 5170 // for Traccar (default 8081)
 #elif SERVER_PROTOCOL == PROTOCOL_HTTPS
 #define SERVER_PORT 443
 #endif
@@ -88,7 +88,7 @@
 // data interval configurations
 #define STATIONARY_TIME_TABLE {30, 60, 180} /* seconds */
 #define SENDING_INTERVAL_TABLE {0, 2000, 5000} /* ms */
-#define DATASET_INTERVAL 200
+#define DATASET_INTERVAL 15000 // default 200
 #define PING_BACK_INTERVAL 900 /* seconds */
 
 /**************************************
